@@ -25,3 +25,5 @@ The frontend consumes a platform-neutral property contract in `lib/property-cata
 ## Deployment
 
 Connect this repository to a Vercel project. Pull requests and non-production branches generate preview deployments; the production branch is `main`.
+
+Git-connected deployments are managed automatically by Vercel.
