@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import SiteHeader from "../components/SiteHeader";
-import LandingHero from "../components/LandingHero";
-import LandingFooter from "../components/LandingFooter";
+import BrandLogo from "../components/BrandLogo";
 import PropertyListingsEmbed from "../components/PropertyListingsEmbed";
 import "../components/landing-page.css";
+import "../components/homepage-restored.css";
 
 export const metadata: Metadata = {
   title: "Gold Coast Accommodation | Gold Coast Accom",
@@ -17,37 +19,36 @@ export const metadata: Metadata = {
   },
 };
 
+
 const places = [
-  { name: "Palm Beach", image: "/assets/palm-beach-coast.webp", href: "/locations/palm-beach", caption: "Beach mornings. Creek-side afternoons." },
-  { name: "Broadbeach", image: "/assets/broadbeach-coast.jpg", href: "/locations/broadbeach", caption: "A little beach. A little city." },
-  { name: "Burleigh Heads", image: "/assets/burleigh-coast.jpg", href: "/locations/burleigh-heads", caption: "The headland. The village. The coast." },
+  {name: "Palm Beach", image: "/assets/palm-beach-coast.webp", href: "/locations/palm-beach", copy: "Relaxed, local and close to the water."},
+  {name: "Broadbeach", image: "/assets/broadbeach-coast.jpg", href: "/locations/broadbeach", copy: "Beach, dining and city energy."},
+  {name: "Burleigh Heads", image: "/assets/burleigh-coast.jpg", href: "/locations/burleigh-heads", copy: "The headland. The village. The coast."},
 ];
-const faqs = [
-  { question: "How do I find a stay for my dates?", answer: "Choose your dates and guest count in the property search. Open a listing to view its photos, amenities, availability and booking details. Pricing and availability depend on the property and dates you select." },
-  { question: "Can you help us choose the right location?", answer: "Yes. Tell our local team what brings you to the Gold Coast, your dates and what matters most. We can help you compare locations and property options before you book." },
-  { question: "What should I check before booking?", answer: "Review the property's location, guest capacity, bedroom layout, amenities and booking terms. Check any particular requirements such as parking, pets or arrival arrangements with our team before booking." },
-  { question: "Are you visiting for an event or with a group?", answer: "Share your event dates, guest count and preferred room arrangements with our team. We can help you review suitable options and confirm the details of your stay." },
+const experiences = [
+  {name: "Adventure drives", image: "/assets/adventure-drive.jpg", copy: "A different way to explore the coast."},
+  {name: "Days on the water", image: "/assets/yacht-experience.png", copy: "Make a little room for the Broadwater."},
+  {name: "Private dining", image: "/assets/private-dining.png", copy: "Time together, around the table."},
 ];
 
 export default function HomePage() {
-  return <div className="landing-page lp-home">
-    <a className="lp-skip-link" href="#main-content">Skip to content</a>
-    <SiteHeader />
-    <main id="main-content">
-      <LandingHero home title="Gold Coast accommodation." location="Gold Coast" caption="The coast, at your own pace." description="A place by the water. A little more time to yourself. Find a home for your next Gold Coast stay." image="/assets/broadbeach-coast.jpg" imageAlt="Broadbeach coastline and beach on the Gold Coast" action="Find your next stay" />
-      <section className="lp-section lp-stays" id="stays" aria-labelledby="stays-title">
-        <div className="lp-section-heading"><h2 id="stays-title">Somewhere you’ll want to stay.</h2><p>Explore the homes. Pick your dates.</p></div>
-        <PropertyListingsEmbed location="Gold Coast" />
-      </section>
-      <section className="lp-section lp-places" aria-labelledby="places-title">
-        <div className="lp-section-heading"><h2 id="places-title">Find your part of the coast.</h2><a className="lp-inline-link" href="/locations">All locations ↗</a></div>
-        <div className="lp-place-grid">{places.map(place => <a key={place.href} href={place.href}><img src={place.image} alt={`${place.name} coastline, Gold Coast`} width="800" height="600" loading="lazy" /><div><h3>{place.name}</h3><span aria-hidden="true">↗</span></div><p>{place.caption}</p></a>)}</div>
-      </section>
-      <section className="lp-section lp-information" aria-labelledby="about-title">
-        <div className="lp-location-copy"><p className="lp-label">A stay with local perspective</p><h2 id="about-title">Make yourself at home.</h2><p>From a beach-first break to a visit built around an event, start with the stay that fits your plans. Gold Coast Accom brings together local homes and a team who know the coast.</p><p>Need a hand choosing? Tell us what you have in mind.</p><div className="lp-related"><a href="mailto:info@abmgc.com.au">Talk to our team ↗</a><a href="/accommodation-near-gc-convention-centre">Convention Centre stays ↗</a><a href="/experiences">Local experiences ↗</a></div></div>
-        <div className="lp-faqs" aria-label="Questions about Gold Coast accommodation">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
-      </section>
-    </main>
-    <LandingFooter />
-  </div>;
+ return <div className="gca-home">
+  <a className="gh-skip" href="#main-content">Skip to content</a><SiteHeader />
+  <main id="main-content">
+   <section className="gh-hero" aria-labelledby="home-title">
+    <Image src="/assets/broadbeach-coast.jpg" alt="Broadbeach coastline on the Gold Coast" fill sizes="100vw" preload />
+    <div className="gh-hero-copy"><p className="gh-script">Live. Stay. Explore.</p><h1 id="home-title">Your Gold Coast stay,<br />thoughtfully curated.</h1><p>Beautiful holiday homes, memorable local experiences and genuine Gold Coast hospitality—all brought together for an easier, more personal stay.</p><div className="gh-actions"><a className="gh-button gh-button-light" href="#stays">Find your stay <span aria-hidden="true">↗</span></a><a className="gh-link" href="#experiences">Explore experiences <span aria-hidden="true">↗</span></a></div></div>
+    <p className="gh-hero-note">Play. Stay. Connect.</p>
+   </section>
+   <div className="gh-booking"><div className="gh-booking-inner"><div><p className="gh-eyebrow">Your next Gold Coast stay</p><p>Pick your dates. Find your place. Book directly.</p></div><a className="gh-button" href="#stays">Search available stays <span aria-hidden="true">↓</span></a></div></div>
+   <section className="gh-section gh-stays" id="stays" aria-labelledby="stays-title">
+    <div className="gh-section-heading"><div><p className="gh-script">Do the Gold Coast your way.</p><h2 id="stays-title">A stay that feels<br />easy from the start.</h2></div><p>Whether you’re planning a beachfront escape, a family holiday or time away with friends, start with the home that fits your plans. Explore the properties, choose your dates and ask our local team for a hand.</p></div>
+    <nav className="gh-collections" aria-label="Explore stay collections"><Link href="/beachfront-accommodation-gold-coast">Beachfront stays ↗</Link><Link href="/luxury-accommodation-gold-coast">Luxury stays ↗</Link><Link href="/corporate-accomodation">Corporate stays ↗</Link></nav>
+    <PropertyListingsEmbed location="Gold Coast" />
+   </section>
+   <section className="gh-section gh-locations" aria-labelledby="locations-title"><div className="gh-section-heading"><div><p className="gh-eyebrow">Find your part of the coast</p><h2 id="locations-title">Stay close to what you love.</h2></div><p>Every neighbourhood has its own rhythm. Find your base for beach mornings, dinner plans and time to unwind.</p></div><div className="gh-location-grid">{places.map((place,index)=><Link className="gh-photo-card" href={place.href} key={place.href}><Image src={place.image} alt={`${place.name} coastline, Gold Coast`} fill sizes="(max-width: 620px) 100vw, 34vw" /><span className="gh-number">0{index+1}</span><div className="gh-card-bottom"><div><h3>{place.name}</h3><p>{place.copy}</p></div><span className="gh-card-arrow" aria-hidden="true">↗</span></div></Link>)}</div></section>
+   <section className="gh-section gh-experiences" id="experiences" aria-labelledby="experiences-title"><div className="gh-section-heading"><div><p className="gh-eyebrow">Play. Stay. Connect.</p><h2 id="experiences-title">Make more of your stay.</h2></div><p>A little inspiration for your time here. Ask our team what can be arranged around your visit.</p></div><div className="gh-experience-grid">{experiences.map((experience,index)=><Link className="gh-photo-card" href="/experiences" key={experience.name}><Image src={experience.image} alt={experience.name} fill sizes="(max-width: 620px) 100vw, 34vw" /><span className="gh-number">0{index+1}</span><div className="gh-card-bottom"><div><h3>{experience.name}</h3><p>{experience.copy}</p></div><span className="gh-card-arrow" aria-hidden="true">↗</span></div></Link>)}</div><div className="gh-experience-note"><p>Something special in mind? Start a conversation with our local team.</p><a className="gh-link" href="mailto:info@abmgc.com.au">Help plan my stay ↗</a></div></section>
+  </main>
+  <footer className="gh-footer"><div className="gh-footer-main"><div className="gh-footer-brand"><Link href="/" aria-label="Gold Coast Accom home"><BrandLogo /></Link><p className="gh-script">Moments that stay with you.</p></div><div className="gh-footer-contact"><a href="mailto:info@abmgc.com.au">info@abmgc.com.au ↗</a><a href="tel:+61400721439">0400 721 439</a></div></div><div className="gh-footer-bottom"><span>© 2026 Gold Coast Accom</span><nav aria-label="Footer navigation"><Link href="/about">Our story</Link><a href="https://www.instagram.com/goldcoastaccom/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/booking-policies">Booking policies</Link></nav></div></footer>
+ </div>;
 }
