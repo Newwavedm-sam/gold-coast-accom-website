@@ -1,8 +1,8 @@
-type Props = { tag: string; location: string };
+type Props = { tag?: string; location: string };
 
 export default function PropertyListingsEmbed({ tag, location }: Props) {
   const url = new URL("https://gold-coast-accommodations.book.psdirectbooking.com/embed/gold-coast-accommodations/properties");
-  url.searchParams.set("tags", tag);
+  if (tag) url.searchParams.set("tags", tag);
 
   return <div className="gca-property-embed">
     <div className="gca-property-embed-top">
@@ -18,6 +18,6 @@ export default function PropertyListingsEmbed({ tag, location }: Props) {
       loading="lazy"
       className="gca-property-embed-frame"
     />
-    <p className="gca-property-embed-help">Prefer a hand finding the right stay? <a href="/contact">Talk to our local team.</a></p>
+    <p className="gca-property-embed-help">Prefer a hand finding the right stay? <a href="mailto:info@abmgc.com.au">Talk to our local team.</a></p>
   </div>;
 }

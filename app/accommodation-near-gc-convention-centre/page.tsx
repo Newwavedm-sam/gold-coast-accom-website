@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { IconCalendarEvent, IconMapPin, IconTrain, IconUsers } from "@tabler/icons-react";
 import SiteHeader from "../../components/SiteHeader";
 import LandingFooter from "../../components/LandingFooter";
+import LandingHero from "../../components/LandingHero";
 import PropertyListingsEmbed from "../../components/PropertyListingsEmbed";
 import { bookingCollections } from "../../lib/booking-collections";
 import "../../components/landing-page.css";
-import "./convention-centre.css";
 
 const canonical = "https://goldcoast-accom.com.au/accommodation-near-gc-convention-centre";
 const description = "Planning an event at GCCEC? Find a Gold Coast accommodation base for your conference or exhibition, with local guidance on Broadbeach, transport and group stays.";
@@ -40,46 +39,18 @@ export default function ConventionCentrePage() {
     ],
   };
 
-  return <div className="pb-page cc-page">
-    <a className="pb-skip-link" href="#main-content">Skip to content</a>
+  return <div className="landing-page">
+    <a className="lp-skip-link" href="#main-content">Skip to content</a>
     <SiteHeader />
     <main id="main-content">
-      <section className="cc-hero" aria-labelledby="cc-title">
-        <div className="cc-hero-copy">
-          <nav className="cc-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Convention Centre stays</span></nav>
-          <p className="eyebrow">Broadbeach · Conferences & events</p>
-          <h1 id="cc-title">Accommodation near Gold Coast Convention Centre.</h1>
-          <p className="pb-script">Here for the event.<br />Stay for the coast.</p>
-          <p className="cc-hero-intro">Find a base for conference days, exhibition weekends and a little time by the water. Let our local team help you plan your stay around GCCEC.</p>
-          <div className="cc-actions"><a className="button secondary" href="#stays">{tag ? "Find an event stay" : "Find a stay for your event"}<span aria-hidden="true">↓</span></a><a href="tel:+61400721439">Call our local team</a></div>
-        </div>
-        <figure className="cc-hero-image"><img src="/assets/broadbeach-coast.jpg" alt="Broadbeach beach and coastline, Gold Coast" width="1600" height="1067" fetchPriority="high" /><figcaption>Broadbeach, Gold Coast</figcaption></figure>
+      <LandingHero title="Accommodation near Gold Coast Convention Centre." location="Broadbeach" description="Here for the event. Stay for the coast. Let our local team help you find the right base for your visit." image="/assets/broadbeach-coast.jpg" imageAlt="Broadbeach beach and coastline, Gold Coast" action={tag ? "Explore event stays" : "Plan your event stay"} />
+      <section className="lp-section lp-stays" id="stays" aria-labelledby="stays-title">
+        {tag ? <><div className="lp-section-heading"><h2 id="stays-title">Find your event stay.</h2><p>Explore dates and properties for your visit.</p></div><PropertyListingsEmbed tag={tag} location="Gold Coast Convention Centre" /></> : <div className="lp-enquiry"><div><p className="lp-label">Your stay, considered</p><h2 id="stays-title">Tell us what brings you here.</h2><p>Share your event dates, guest count and what matters to you. We’ll help you check suitable properties and their location before you book.</p></div><div className="lp-enquiry-actions"><a className="lp-button" href={enquiryEmail}>Email your stay request <span aria-hidden="true">↗</span></a><a className="lp-phone" href="tel:+61400721439">0400 721 439</a></div></div>}
       </section>
-
-      <div className="cc-venue-strip" aria-label="Planning your venue visit">
-        <div><IconMapPin aria-hidden="true" stroke={1.4} /><span><strong>Your venue</strong>GCCEC · Broadbeach</span></div>
-        <div><IconTrain aria-hidden="true" stroke={1.4} /><span><strong>Nearby tram stop</strong>Broadbeach North</span></div>
-        <div><IconUsers aria-hidden="true" stroke={1.4} /><span><strong>Travelling together?</strong>Ask about your group</span></div>
-      </div>
-
-      <section className="pb-stays cc-stays" id="stays" aria-labelledby="cc-stays-title"><div className="pb-section pb-stays-inner">
-        <div className="pb-stays-heading"><div><p className="eyebrow">Start with your dates</p><h2 id="cc-stays-title">Make the stay<br />part of the plan.</h2></div><p>Your event, your group, your pace.<br />We’ll help you narrow down the options.</p></div>
-        {tag ? <PropertyListingsEmbed tag={tag} location="Gold Coast Convention Centre" /> : <div className="cc-enquiry-panel">
-          <div className="cc-enquiry-copy"><IconCalendarEvent aria-hidden="true" stroke={1.3} /><h3>Let’s find your event stay.</h3><p>Send your dates and what matters most. Our team can help you check suitable properties and their location before you book.</p><div className="cc-actions"><a className="button secondary" href={enquiryEmail}>Email your stay request <span aria-hidden="true">↗</span></a><a href="tel:+61400721439">0400 721 439</a></div></div>
-          <div className="cc-request-details"><p className="eyebrow">A few details to get started</p><ol><li><span>01</span><div><strong>Your event & dates</strong><p>Include arrival and departure, plus any time you’d like on the coast.</p></div></li><li><span>02</span><div><strong>Guests & bedrooms</strong><p>Tell us the group size and room arrangements you need.</p></div></li><li><span>03</span><div><strong>Your priorities</strong><p>Walking distance, parking, a workspace or a particular budget? Let us know.</p></div></li></ol></div>
-        </div>}
-      </div></section>
-
-      <section className="pb-section cc-plan" aria-labelledby="cc-plan-title">
-        <div className="cc-plan-copy"><p className="eyebrow">Keep the practical things simple</p><h2 id="cc-plan-title">A smoother<br />conference day.</h2><p>When your plans revolve around the Convention Centre, the details of your stay matter. Check your event schedule, the exact property location and the facilities you’ll use.</p><p>For longer visits or a team travelling together, share your requirements early so we can help you compare the options.</p></div>
-        <div className="cc-plan-list"><article><span>01</span><div><h3>Check the route</h3><p>Use the exact property address and your event entrance when comparing walking or travel options.</p></div></article><article><span>02</span><div><h3>Match the space to your group</h3><p>Review bedroom layouts, guest capacity and the amenities listed for your chosen property.</p></div></article><article><span>03</span><div><h3>Plan around the event</h3><p>Allow for arrival, registration and departure. Ask about check-in arrangements before booking.</p></div></article></div>
+      <section className="lp-section lp-information" aria-labelledby="venue-title">
+        <div className="lp-location-copy"><p className="lp-label">Before your event</p><h2 id="venue-title">A base in Broadbeach.</h2><p>GCCEC is at 2684–2690 Gold Coast Highway, Broadbeach. Broadbeach North tram station is across the road from the venue’s main entrance.</p><p>Check the exact route from your chosen property and your event’s arrival instructions. Our team can help you compare the options.</p><div className="lp-related"><a href="https://www.gccec.com.au/contact/" target="_blank" rel="noopener noreferrer">Official venue information ↗<span className="pb-sr-only"> (opens in a new tab)</span></a><a href="/locations/broadbeach">Explore Broadbeach ↗</a></div></div>
+        <div className="lp-faqs" aria-label="Questions about Convention Centre stays">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
       </section>
-
-      <section className="cc-venue" aria-labelledby="cc-venue-title"><div className="pb-section cc-venue-grid"><div><p className="pb-script">Meet you in Broadbeach.</p><h2 id="cc-venue-title">Know where<br />you’re heading.</h2><p>GCCEC sits on Gold Coast Highway in Broadbeach. The venue’s official visitor information identifies Broadbeach North tram station across the road from the main entrance.</p><p>Check current transport information and your event’s arrival instructions before travelling.</p></div><aside className="cc-address-card" aria-label="Venue address"><IconMapPin aria-hidden="true" stroke={1.2} /><h3>Gold Coast Convention<br />and Exhibition Centre</h3><address>2684–2690 Gold Coast Highway<br />Broadbeach, Queensland 4218</address><a href="https://www.gccec.com.au/contact/" target="_blank" rel="noopener noreferrer">Official venue & transport information <span aria-hidden="true">↗</span><span className="pb-sr-only"> (opens in a new tab)</span></a></aside></div></section>
-
-      <section className="pb-faq-wrap" id="faqs" aria-labelledby="cc-faq-title"><div className="pb-section pb-faq-grid"><div><p className="eyebrow">Before your event</p><h2 id="cc-faq-title">Your stay,<br />thought through.</h2><p>Have a particular requirement?<br /><a href={enquiryEmail}>Ask our local team <span aria-hidden="true">↗</span></a></p></div><div className="pb-faqs">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>
-
-      <section className="pb-section cc-final"><div><p className="eyebrow">Make room for a little more</p><h2>Conference done.<br />Coast calling.</h2><p>Explore Broadbeach, add another night or ask about a local experience around your event.</p></div><div className="cc-final-links"><a href="/locations/broadbeach">Discover Broadbeach <span aria-hidden="true">↗</span></a><a href="/concierge">Explore concierge experiences <span aria-hidden="true">↗</span></a><a href="#stays">Plan your event stay <span aria-hidden="true">↑</span></a></div></section>
     </main>
     <LandingFooter />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c") }} />

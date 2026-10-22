@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { IconBeach, IconRipple, IconSun } from "@tabler/icons-react";
 import SiteHeader from "../../../components/SiteHeader";
 import LandingFooter from "../../../components/LandingFooter";
+import LandingHero from "../../../components/LandingHero";
 import PropertyListingsEmbed from "../../../components/PropertyListingsEmbed";
 import { bookingCollections } from "../../../lib/booking-collections";
 import "../../../components/landing-page.css";
@@ -36,49 +36,19 @@ export default function PalmBeachPage() {
       { "@type": "ListItem", position: 3, name: "Palm Beach", item: canonical },
     ],
   };
-  return <div className="pb-page">
-    <a className="pb-skip-link" href="#main-content">Skip to content</a>
+  return <div className="landing-page">
+    <a className="lp-skip-link" href="#main-content">Skip to content</a>
     <SiteHeader />
     <main id="main-content">
-      <section className="pb-hero" aria-labelledby="pb-title">
-        <img className="pb-hero-photo" src="/assets/palm-beach-coast.webp" alt="Palm Beach coastline, Gold Coast" fetchPriority="high" width="1600" height="1067" />
-        <div className="pb-hero-shade" />
-        <div className="pb-hero-content">
-          <nav className="pb-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/locations">Locations</a><span aria-hidden="true">/</span><span aria-current="page">Palm Beach</span></nav>
-          <p className="pb-script">Find your part of the coast.</p>
-          <h1 id="pb-title">Palm Beach<br />accommodation.</h1>
-          <p className="pb-hero-intro">Beach mornings. Creek-side afternoons.<br />A little more room to slow down.</p>
-          <a className="button primary" href="#stays">Find your Palm Beach stay <span aria-hidden="true">↓</span></a>
-        </div>
-        <span className="pb-hero-label">Palm Beach · Southern Gold Coast</span>
+      <LandingHero title="Palm Beach accommodation." location="Palm Beach" description="A place by the water. Space to settle in. Find your stay on the southern Gold Coast." image="/assets/palm-beach-coast.webp" imageAlt="Palm Beach coastline on the Gold Coast" action="Explore the stays" />
+      <section className="lp-section lp-stays" id="stays" aria-labelledby="stays-title">
+        <div className="lp-section-heading"><h2 id="stays-title">Find your Palm Beach stay.</h2><p>Choose your dates. Make yourself at home.</p></div>
+        <PropertyListingsEmbed tag={bookingCollections.palmBeach.tag} location="Palm Beach" />
       </section>
-
-      <nav className="pb-section-nav" aria-label="On this page"><a href="#neighbourhood">The neighbourhood</a><a href="#stays">Find a stay</a><a href="#explore">Explore Palm Beach</a><a href="#faqs">Your questions</a></nav>
-
-      <section className="pb-section pb-intro" id="neighbourhood" aria-labelledby="pb-intro-title">
-        <div><p className="eyebrow">Stay local. Feel at home.</p><h2 id="pb-intro-title">A stretch of coast<br />to call your own.</h2></div>
-        <div className="pb-intro-copy"><p>Set between Tallebudgera Creek and Currumbin Creek, Palm Beach brings together a long ocean beach and a neighbourhood you can settle into.</p><p>Make time for a coffee, a walk along the sand or an afternoon by the creek. Our Palm Beach stays give you a base to explore the southern Gold Coast at your own pace.</p><p className="pb-script pb-intro-signoff">Live. Stay. Explore.</p></div>
+      <section className="lp-section lp-information" aria-labelledby="location-title">
+        <div className="lp-location-copy"><p className="lp-label">A little local knowledge</p><h2 id="location-title">Get to know Palm Beach.</h2><p>Between Tallebudgera Creek and Currumbin Creek, Palm Beach offers a long ocean beach and an easy base for the southern Gold Coast.</p><p>Make time for a beach walk, a coffee in the neighbourhood or an afternoon by the creek. Choose your pace.</p><div className="lp-related"><a href="/locations/burleigh-heads">Burleigh Heads ↗</a><a href="/locations/broadbeach">Broadbeach ↗</a><a href="/locations">All locations ↗</a></div></div>
+        <div className="lp-faqs" aria-label="Questions about Palm Beach stays">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
       </section>
-
-      <section className="pb-stays" id="stays" aria-labelledby="pb-stays-title">
-        <div className="pb-section pb-stays-inner">
-          <div className="pb-stays-heading"><div><p className="eyebrow">Your next coastal escape</p><h2 id="pb-stays-title">Stay in Palm Beach.</h2></div><p>Find the space that fits your holiday.<br />Explore properties, dates and availability below.</p></div>
-          <PropertyListingsEmbed tag={bookingCollections.palmBeach.tag} location="Palm Beach" />
-        </div>
-      </section>
-
-      <section className="pb-section pb-explore" id="explore" aria-labelledby="pb-explore-title">
-        <div className="pb-explore-heading"><p className="pb-script">A few local favourites.</p><h2 id="pb-explore-title">Make a day of it.</h2><p>No packed itinerary required. Start with the places that give Palm Beach its character.</p></div>
-        <div className="pb-guide-grid">
-          <article><IconBeach aria-hidden="true" stroke={1.25} /><p className="eyebrow">Ocean side</p><h3>Palm Beach</h3><p>Leave time for the long stretch of sand that gives the suburb its name. A beach walk is a simple way to get your bearings and settle into the coastal pace.</p></article>
-          <article><IconRipple aria-hidden="true" stroke={1.25} /><p className="eyebrow">At the northern end</p><h3>Tallebudgera Creek</h3><p>The creek sits between Palm Beach and Burleigh Head National Park. Bring a picnic, enjoy the waterside setting or head across the bridge to explore the headland.</p><a href="https://experiencegoldcoast.com/places-to-go/southern-gold-coast/things-to-do/tallebudgera-creek-au0097422" target="_blank" rel="noopener noreferrer">Explore the creek <span aria-hidden="true">↗</span><span className="pb-sr-only"> (opens in a new tab)</span></a></article>
-          <article><IconSun aria-hidden="true" stroke={1.25} /><p className="eyebrow">At the southern end</p><h3>Currumbin Creek</h3><p>Take a change of scene at the southern end of Palm Beach. The creek and nearby parklands make another stop to work into your day, with the ocean beach close by.</p></article>
-        </div>
-      </section>
-
-      <section className="pb-faq-wrap" id="faqs" aria-labelledby="pb-faq-title"><div className="pb-section pb-faq-grid"><div><p className="eyebrow">Before you pack</p><h2 id="pb-faq-title">A few things<br />worth knowing.</h2><p>Still choosing your stay?<br /><a href="/contact">We’re here to help <span aria-hidden="true">↗</span></a></p></div><div className="pb-faqs">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>
-
-      <section className="pb-section pb-next"><div><p className="eyebrow">Keep exploring</p><h2>Another part of the coast?</h2></div><div className="pb-nearby-links"><a href="/locations/burleigh-heads">Burleigh Heads <span aria-hidden="true">↗</span></a><a href="/locations/broadbeach">Broadbeach <span aria-hidden="true">↗</span></a><a href="/locations/bilinga">Bilinga <span aria-hidden="true">↗</span></a><a href="/locations">All locations <span aria-hidden="true">→</span></a></div></section>
     </main>
     <LandingFooter />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c") }} />
