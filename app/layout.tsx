@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head><link rel="preload" href="/assets/playlist-script.woff" as="font" type="font/woff" crossOrigin="anonymous" /></head>
+      <head>{process.env.NODE_ENV === "development" && <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async />}<link rel="preload" href="/assets/playlist-script.woff" as="font" type="font/woff" crossOrigin="anonymous" /></head>
       <body>{children}</body>
     </html>
   );
