@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { IconBeach, IconRipple, IconSun } from "@tabler/icons-react";
 import SiteHeader from "../../../components/SiteHeader";
-import BrandLogo from "../../../components/BrandLogo";
+import LandingFooter from "../../../components/LandingFooter";
 import PropertyListingsEmbed from "../../../components/PropertyListingsEmbed";
-import "./palm-beach.css";
+import { bookingCollections } from "../../../lib/booking-collections";
+import "../../../components/landing-page.css";
 
 const canonical = "https://goldcoast-accom.com.au/locations/palm-beach";
 const description = "Find your Palm Beach accommodation on the Gold Coast. Explore local stays, check dates and discover the beach, creeks and neighbourhood with Gold Coast Accom.";
@@ -62,7 +63,7 @@ export default function PalmBeachPage() {
       <section className="pb-stays" id="stays" aria-labelledby="pb-stays-title">
         <div className="pb-section pb-stays-inner">
           <div className="pb-stays-heading"><div><p className="eyebrow">Your next coastal escape</p><h2 id="pb-stays-title">Stay in Palm Beach.</h2></div><p>Find the space that fits your holiday.<br />Explore properties, dates and availability below.</p></div>
-          <PropertyListingsEmbed tag="palm beach" location="Palm Beach" />
+          <PropertyListingsEmbed tag={bookingCollections.palmBeach.tag} location="Palm Beach" />
         </div>
       </section>
 
@@ -79,7 +80,7 @@ export default function PalmBeachPage() {
 
       <section className="pb-section pb-next"><div><p className="eyebrow">Keep exploring</p><h2>Another part of the coast?</h2></div><div className="pb-nearby-links"><a href="/locations/burleigh-heads">Burleigh Heads <span aria-hidden="true">↗</span></a><a href="/locations/broadbeach">Broadbeach <span aria-hidden="true">↗</span></a><a href="/locations/bilinga">Bilinga <span aria-hidden="true">↗</span></a><a href="/locations">All locations <span aria-hidden="true">→</span></a></div></section>
     </main>
-    <footer className="pb-footer"><div><a href="/" aria-label="Gold Coast Accom home"><BrandLogo /></a><p>Boutique stays and memorable local experiences<br />on the Gold Coast.</p></div><nav aria-label="Footer navigation"><a href="/contact">Contact our team</a><a href="https://www.instagram.com/goldcoastaccom/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="/privacy">Privacy</a><a href="/booking-policies">Booking policies</a></nav><div className="pb-footer-bottom">© 2026 Gold Coast Accom</div></footer>
+    <LandingFooter />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c") }} />
   </div>;
 }
