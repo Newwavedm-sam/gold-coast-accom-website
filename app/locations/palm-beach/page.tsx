@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import SiteHeader from "../../../components/SiteHeader";
 import LandingFooter from "../../../components/LandingFooter";
@@ -46,7 +47,7 @@ export default function PalmBeachPage() {
         <PropertyListingsEmbed tag={bookingCollections.palmBeach.tag} location="Palm Beach" />
       </section>
       <section className="lp-section lp-information" aria-labelledby="location-title">
-        <div className="lp-location-copy"><p className="lp-label">A little local knowledge</p><h2 id="location-title">Get to know Palm Beach.</h2><p>Between Tallebudgera Creek and Currumbin Creek, Palm Beach offers a long ocean beach and an easy base for the southern Gold Coast.</p><p>Make time for a beach walk, a coffee in the neighbourhood or an afternoon by the creek. Choose your pace.</p><div className="lp-related"><a href="/locations/burleigh-heads">Burleigh Heads ↗</a><a href="/locations/broadbeach">Broadbeach ↗</a><a href="/locations">All locations ↗</a></div></div>
+        <div className="lp-location-copy"><p className="lp-label">A little local knowledge</p><h2 id="location-title">Get to know Palm Beach.</h2><p>Between Tallebudgera Creek and Currumbin Creek, Palm Beach offers a long ocean beach and an easy base for the southern Gold Coast.</p><p>Make time for a beach walk, a coffee in the neighbourhood or an afternoon by the creek. Choose your pace.</p><div className="lp-related"><Link href="/locations/burleigh-heads">Burleigh Heads ↗</Link><Link href="/locations/broadbeach">Broadbeach ↗</Link><Link href="/locations">All locations ↗</Link></div></div>
         <div className="lp-faqs" aria-label="Questions about Palm Beach stays">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
       </section>
     </main>

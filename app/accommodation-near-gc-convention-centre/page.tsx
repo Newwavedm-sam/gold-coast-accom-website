@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import SiteHeader from "../../components/SiteHeader";
 import LandingFooter from "../../components/LandingFooter";
@@ -48,7 +49,7 @@ export default function ConventionCentrePage() {
         {tag ? <><div className="lp-section-heading"><h2 id="stays-title">Find your event stay.</h2><p>Explore dates and properties for your visit.</p></div><PropertyListingsEmbed tag={tag} location="Gold Coast Convention Centre" /></> : <div className="lp-enquiry"><div><p className="lp-label">Your stay, considered</p><h2 id="stays-title">Tell us what brings you here.</h2><p>Share your event dates, guest count and what matters to you. We’ll help you check suitable properties and their location before you book.</p></div><div className="lp-enquiry-actions"><a className="lp-button" href={enquiryEmail}>Email your stay request <span aria-hidden="true">↗</span></a><a className="lp-phone" href="tel:+61400721439">0400 721 439</a></div></div>}
       </section>
       <section className="lp-section lp-information" aria-labelledby="venue-title">
-        <div className="lp-location-copy"><p className="lp-label">Before your event</p><h2 id="venue-title">A base in Broadbeach.</h2><p>GCCEC is at 2684–2690 Gold Coast Highway, Broadbeach. Broadbeach North tram station is across the road from the venue’s main entrance.</p><p>Check the exact route from your chosen property and your event’s arrival instructions. Our team can help you compare the options.</p><div className="lp-related"><a href="https://www.gccec.com.au/contact/" target="_blank" rel="noopener noreferrer">Official venue information ↗<span className="pb-sr-only"> (opens in a new tab)</span></a><a href="/locations/broadbeach">Explore Broadbeach ↗</a></div></div>
+        <div className="lp-location-copy"><p className="lp-label">Before your event</p><h2 id="venue-title">A base in Broadbeach.</h2><p>GCCEC is at 2684–2690 Gold Coast Highway, Broadbeach. Broadbeach North tram station is across the road from the venue’s main entrance.</p><p>Check the exact route from your chosen property and your event’s arrival instructions. Our team can help you compare the options.</p><div className="lp-related"><a href="https://www.gccec.com.au/contact/" target="_blank" rel="noopener noreferrer">Official venue information ↗<span className="pb-sr-only"> (opens in a new tab)</span></a><Link href="/locations/broadbeach">Explore Broadbeach ↗</Link></div></div>
         <div className="lp-faqs" aria-label="Questions about Convention Centre stays">{faqs.map(({ question, answer }) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
       </section>
     </main>

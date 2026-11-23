@@ -1,6 +1,14 @@
+import Link from "next/link";
+import type { Metadata } from "next";
 import { IconHeart, IconHome, IconMapPin, IconSparkles, IconUsers } from "@tabler/icons-react";
 import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
+
+export const metadata: Metadata = {
+  title: "About Gold Coast Accom",
+  description: "Meet the local team behind Gold Coast Accom and its collection of coastal stays.",
+  alternates: { canonical: "https://goldcoast-accom.com.au/about" },
+};
 
 export default function AboutPage(){return <main>
   <SiteHeader/>
@@ -22,10 +30,10 @@ export default function AboutPage(){return <main>
   </section>
 
   <section className="about-team">
-    <div><p className="eyebrow">The people behind your stay</p><p className="script teal">A small team with a lot of local know-how.</p><h2>Hospitality takes a team.</h2><p>Ryan and Rachel lead day-to-day operations, supported by specialists across guest experience, marketing and technology, interiors, finance and photography—plus a network of trusted cleaners, maintenance professionals and local service partners.</p><a className="button secondary" href="/contact">Meet us through an enquiry</a></div>
+    <div><p className="eyebrow">The people behind your stay</p><p className="script teal">A small team with a lot of local know-how.</p><h2>Hospitality takes a team.</h2><p>Ryan and Rachel lead day-to-day operations, supported by specialists across guest experience, marketing and technology, interiors, finance and photography—plus a network of trusted cleaners, maintenance professionals and local service partners.</p><Link className="button secondary" href="/contact">Meet us through an enquiry</Link></div>
     <div className="about-team-notes"><article><IconUsers/><h3>Hands-on leadership</h3><p>The owners remain close to the day-to-day guest and property experience.</p></article><article><IconSparkles/><h3>Trusted specialists</h3><p>Local expertise across styling, photography, maintenance and memorable extras.</p></article></div>
   </section>
 
-  <section className="about-image-band"><div><p className="script">Moments that stay<br/>with you forever.</p><p>Live. Stay. Explore.</p><a className="button primary" href="/properties">Find your stay</a></div></section>
+  <section className="about-image-band"><div><p className="script">Moments that stay<br/>with you forever.</p><p>Live. Stay. Explore.</p><Link className="button primary" href="/properties">Find your stay</Link></div></section>
   <SiteFooter/>
 </main>}

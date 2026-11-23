@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { IconBallTennis, IconBed, IconCar, IconHeart, IconPlaneArrival, IconSparkles, IconUsers, IconYoga } from "@tabler/icons-react";
 import EnquiryForm from "./EnquiryForm";
@@ -15,12 +16,12 @@ const benefits = [
 ];
 
 const itinerary = [
-  ["Day 1","Arrive & settle in","Airport pickup, check-in and a relaxed welcome dinner.","https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Broadbeach.jpg"],
+  ["Day 1","Arrive & settle in","Airport pickup, check-in and a relaxed welcome dinner.","/wp-content/uploads/2026/02/Broadbeach.jpg"],
   ["Day 2","Play & improve","Coaching session, match play and time by the ocean.","/assets/experience-strip-reference.png"],
-  ["Day 3","Compete & connect","Friendly competition followed by a memorable group dinner.","https://goldcoast-accom.com.au/wp-content/uploads/2024/10/finedine.png"],
-  ["Day 4","Recover & explore","A slower morning, wellness option and local exploring.","https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Burleigh.jpg"],
+  ["Day 3","Compete & connect","Friendly competition followed by a memorable group dinner.","/wp-content/uploads/2024/10/finedine.png"],
+  ["Day 4","Recover & explore","A slower morning, wellness option and local exploring.","/wp-content/uploads/2026/02/Burleigh.jpg"],
   ["Day 5","Finals day","Tournament play, prizes and an easy celebration together.","https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=900&q=85"],
-  ["Day 6","Departure","Breakfast, check-out and an arranged transfer if required.","https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Palm-Beach.webp"],
+  ["Day 6","Departure","Breakfast, check-out and an arranged transfer if required.","/wp-content/uploads/2026/02/Palm-Beach.webp"],
 ];
 
 const reviews = [
@@ -57,7 +58,7 @@ export default function PadelLanding(){
     </section>
 
     <section className="padel-stay">
-      <div><p className="eyebrow">Premium accommodation</p><h2>Stay in comfort.<br/>Close to everything.</h2><p>We match the group with homes and apartments that make the off-court part of the trip just as good.</p><ul><li>Modern, comfortable spaces</li><li>Resort-style facilities where available</li><li>Options for solo travellers, couples and groups</li></ul><a className="button secondary" href="/properties">View accommodation</a></div>
+      <div><p className="eyebrow">Premium accommodation</p><h2>Stay in comfort.<br/>Close to everything.</h2><p>We match the group with homes and apartments that make the off-court part of the trip just as good.</p><ul><li>Modern, comfortable spaces</li><li>Resort-style facilities where available</li><li>Options for solo travellers, couples and groups</li></ul><Link className="button secondary" href="/properties">View accommodation</Link></div>
       <div className="padel-stay-gallery"><div/><span/><span/><span/></div>
     </section>
 

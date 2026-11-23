@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
 import ConciergeLibrary from "../../components/ConciergeLibrary";
+
+export const metadata: Metadata = {
+  title: "Gold Coast Concierge",
+  description: "Ask our local team about experiences and services around your Gold Coast stay.",
+  alternates: { canonical: "https://goldcoast-accom.com.au/concierge" },
+};
 
 export default function ConciergePage(){
   return <main>

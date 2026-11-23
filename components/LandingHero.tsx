@@ -1,3 +1,4 @@
+import Link from "next/link";
 type Props = {
   title: string;
   location: string;
@@ -11,7 +12,7 @@ type Props = {
 
 export default function LandingHero({ title, location, description, image, imageAlt, action, home = false, caption }: Props) {
   return <section className="lp-hero" aria-labelledby="landing-title">
-    {!home && <nav className="lp-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">{location}</span></nav>}
+    {!home && <nav className="lp-breadcrumb" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><span aria-current="page">{location}</span></nav>}
     <div className="lp-heading-row">
       <h1 id="landing-title">{title}</h1>
       <div className="lp-heading-copy"><p>{description}</p><a className="lp-text-action" href="#stays">{action} <span aria-hidden="true">↘</span></a></div>

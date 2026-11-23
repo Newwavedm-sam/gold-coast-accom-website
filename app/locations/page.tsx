@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
 import SiteHeader from "../../components/SiteHeader";
 import { locations } from "../../lib/discovery-data";
+export const metadata: Metadata = {
+  title: "Where to Stay on the Gold Coast",
+  description: "Explore Gold Coast neighbourhoods and find the right area for your stay.",
+  alternates: { canonical: "https://goldcoast-accom.com.au/locations" },
+};
+
 export default function LocationsPage(){return <main><SiteHeader/><section className="editorial-hero"><p className="eyebrow">Find your part of the coast</p><h1>Every neighbourhood<br/>has its own rhythm.</h1><p>Choose beachside calm, walkable dining or somewhere quieter to unwind. Our local guides make it easier to find the right base.</p></section><section className="discovery-list">{locations.map((item,index)=><a className="discovery-row" href={`/locations/${item.slug}`} key={item.slug}><div className="discovery-image" style={{backgroundImage:`url(${item.image})`}}/><div className="discovery-copy"><span>0{index+1}</span><p className="eyebrow">{item.seo}</p><h2>{item.name}</h2><p>{item.intro}</p><strong>Explore {item.name} →</strong></div></a>)}</section></main>}
