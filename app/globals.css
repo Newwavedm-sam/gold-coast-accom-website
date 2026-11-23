@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @font-face { font-family:"Playlist Script"; src:url('/assets/playlist-script.woff') format('woff'); font-style:normal; font-weight:400; font-display:swap; }
@@ -19,10 +19,10 @@ button,input,select { font:inherit; }
 .nav-cta { background:var(--teal); color:white; padding:13px 21px; border-radius:3px; }
 .menu-button { display:none; background:none; border:0; width:42px; height:42px; padding:10px; }
 .menu-button span { display:block; height:1px; background:var(--navy); margin:7px 0; }
-.hero { height:min(720px,76vh); min-height:580px; position:relative; display:flex; align-items:center; padding:60px clamp(24px,7vw,110px); color:white; background:url("https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Broadbeach.jpg") center 48%/cover; }
+.hero { height:min(720px,76vh); min-height:580px; position:relative; display:flex; align-items:center; padding:60px clamp(24px,7vw,110px); color:white; background:url("/wp-content/uploads/2026/02/Broadbeach.jpg") center 48%/cover; }
 .hero-overlay { position:absolute; inset:0; background:linear-gradient(90deg,rgba(4,43,61,.72) 0%,rgba(4,43,61,.42) 48%,rgba(4,43,61,.08) 80%); }
 .hero-copy { max-width:770px; position:relative; z-index:1; }
-.script { font:400 clamp(34px,3.5vw,52px)/1.05 "Sacramento",cursive; letter-spacing:.01em; margin:0 0 13px; }
+.script { font:400 clamp(34px,3.5vw,52px)/1.05 "Playlist Script",cursive; letter-spacing:.01em; margin:0 0 13px; }
 .script.teal { color:var(--teal); }
 h1 { font-size:clamp(42px,5vw,66px); line-height:1.06; letter-spacing:-.035em; font-weight:500; margin:0 0 25px; }
 .hero-intro { max-width:650px; font-size:clamp(14px,1.2vw,17px); line-height:1.75; margin:0; }
@@ -35,7 +35,7 @@ h1 { font-size:clamp(42px,5vw,66px); line-height:1.06; letter-spacing:-.035em; f
 .button.outline-light { border:1px solid rgba(255,255,255,.75); color:white; margin-left:12px; }
 .text-link { display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.09em; padding-bottom:5px; border-bottom:1px solid currentColor; }
 .text-link.light { color:white; }
-.hero-note { position:absolute; z-index:2; right:5vw; bottom:28px; margin:0; font:400 38px/1 "Sacramento",cursive; }
+.hero-note { position:absolute; z-index:2; right:5vw; bottom:28px; margin:0; font:400 38px/1 "Playlist Script",cursive; }
 .search-wrap { max-width:1180px; margin:0 auto; position:relative; padding:30px 20px 0; }
 .search-bar { background:white; border:1px solid #dfe7e9; border-radius:7px; box-shadow:0 9px 28px rgba(17,64,80,.08); min-height:96px; display:grid; grid-template-columns:1.2fr 1fr 1fr .85fr auto; align-items:center; padding:14px 18px; }
 .search-bar label { padding:4px 22px; border-right:1px solid #e3e7e7; }
@@ -117,9 +117,9 @@ blockquote { max-width:850px; margin:28px auto; font-family:"Montserrat",sans-se
 .review-author { font-size:10px; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); }
 .journal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:25px; }
 .journal-image { height:260px; background-size:cover; background-position:center; }
-.journal-one { background-image:url("https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Palm-Beach.webp"); }
-.journal-two { background-image:url("https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Currumbin.jpg"); }
-.journal-three { background-image:url("https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Broadbeach.jpg"); }
+.journal-one { background-image:url("/wp-content/uploads/2026/02/Palm-Beach.webp"); }
+.journal-two { background-image:url("/wp-content/uploads/2026/02/Currumbin.jpg"); }
+.journal-three { background-image:url("/wp-content/uploads/2026/02/Broadbeach.jpg"); }
 .journal article>.eyebrow { margin:18px 0 10px; }
 .journal h3 { font-size:20px; line-height:1.35; margin:0; }
 .final-cta { text-align:center; color:white; padding:110px 24px; background:linear-gradient(rgba(6,58,78,.83),rgba(6,58,78,.83)),url("https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=2000&q=85") center/cover; }
@@ -259,7 +259,7 @@ footer>div:not(.footer-brand):not(.footer-bottom) a { display:block; font-size:1
 .enquiry-success>span { font-size:38px; color:var(--teal); }
 .enquiry-success p { color:var(--muted); font-size:11px; line-height:1.7; }
 .enquiry-success button { background:none; margin-top:15px; }
-.concierge-hero { min-height:680px; padding:90px clamp(24px,7vw,110px); color:white; display:flex; align-items:flex-end; background:linear-gradient(90deg,rgba(5,48,67,.76),rgba(5,48,67,.12)),url("https://goldcoast-accom.com.au/wp-content/uploads/2024/10/finedine.png") center/cover; }
+.concierge-hero { min-height:680px; padding:90px clamp(24px,7vw,110px); color:white; display:flex; align-items:flex-end; background:linear-gradient(90deg,rgba(5,48,67,.76),rgba(5,48,67,.12)),url("/wp-content/uploads/2024/10/finedine.png") center/cover; }
 .concierge-hero h1 { font-size:clamp(55px,7vw,92px); }
 .concierge-hero>div>p:last-child { max-width:580px; line-height:1.8; }
 .concierge-services { max-width:1180px; margin:0 auto; padding:80px 24px; display:grid; grid-template-columns:repeat(4,1fr); gap:35px; }
@@ -303,7 +303,7 @@ footer>div:not(.footer-brand):not(.footer-bottom) a { display:block; font-size:1
 .about-intro .script { font-size:34px; margin:15px 0 10px; }
 .about-intro>div:last-child p { font-size:14px; line-height:1.9; color:var(--muted); }
 .about-local { max-width:1180px; margin:0 auto; padding:0 24px 120px; display:grid; grid-template-columns:1.1fr .9fr; gap:85px; align-items:center; }
-.about-local-image { min-height:610px; padding:40px; display:flex; align-items:flex-end; color:white; background:linear-gradient(180deg,transparent 45%,rgba(5,48,67,.62)),url("https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Burleigh.jpg") center/cover; }
+.about-local-image { min-height:610px; padding:40px; display:flex; align-items:flex-end; color:white; background:linear-gradient(180deg,transparent 45%,rgba(5,48,67,.62)),url("/wp-content/uploads/2026/02/Burleigh.jpg") center/cover; }
 .about-local-copy>p:not(.eyebrow) { color:var(--muted); line-height:1.85; margin:24px 0 30px; }
 .about-stat { display:grid; grid-template-columns:100px 1fr; gap:20px; align-items:center; padding:20px 0; border-top:1px solid #dfe5e5; }
 .about-stat strong { color:var(--teal); font-size:25px; font-weight:500; }
@@ -325,7 +325,7 @@ footer>div:not(.footer-brand):not(.footer-bottom) a { display:block; font-size:1
 .about-team-notes article { border:1px solid #dfe5e5; padding:32px; min-height:250px; }
 .about-team-notes svg { width:38px; height:38px; color:var(--navy); stroke-width:1.2; }
 .about-team-notes p { color:var(--muted); font-size:11px; line-height:1.7; }
-.about-image-band { min-height:580px; padding:45px; color:white; display:flex; align-items:flex-end; justify-content:center; text-align:center; background:linear-gradient(180deg,transparent,rgba(5,48,67,.55)),url("https://goldcoast-accom.com.au/wp-content/uploads/2026/02/Burleigh.jpg") center/cover; }
+.about-image-band { min-height:580px; padding:45px; color:white; display:flex; align-items:flex-end; justify-content:center; text-align:center; background:linear-gradient(180deg,transparent,rgba(5,48,67,.55)),url("/wp-content/uploads/2026/02/Burleigh.jpg") center/cover; }
 .about-image-band .script { font-size:clamp(40px,5vw,66px); }
 .about-image-band div>p:nth-child(2) { text-transform:uppercase; font-size:9px; letter-spacing:.2em; }
 .about-image-band .button { margin-top:16px; }
@@ -367,7 +367,7 @@ footer>div:not(.footer-brand):not(.footer-bottom) a { display:block; font-size:1
 .padel-hero h1 { font-size:clamp(52px,6.3vw,84px); margin:18px 0 24px; font-weight:500; letter-spacing:-.04em; }
 .padel-hero-copy>p:last-of-type { max-width:570px; font-size:16px; line-height:1.75; }
 .padel-actions { display:flex; gap:13px; margin-top:31px; }
-.padel-hero-script { position:relative; z-index:1; align-self:flex-end; margin:0 0 4px; font:400 clamp(38px,3.4vw,52px)/1 "Sacramento",cursive; color:white; text-shadow:0 2px 18px rgba(5,48,67,.25); }
+.padel-hero-script { position:relative; z-index:1; align-self:flex-end; margin:0 0 4px; font:400 clamp(38px,3.4vw,52px)/1 "Playlist Script",cursive; color:white; text-shadow:0 2px 18px rgba(5,48,67,.25); }
 .padel-benefits { background:white; color:var(--ink); display:grid; grid-template-columns:repeat(6,1fr); padding:46px clamp(18px,4vw,65px); gap:30px; border-bottom:1px solid #e3eaec; }
 .padel-benefits article { text-align:center; }
 .padel-benefits svg { width:36px; height:36px; color:var(--navy); stroke-width:1.25; }
@@ -394,7 +394,7 @@ footer>div:not(.footer-brand):not(.footer-bottom) a { display:block; font-size:1
 .padel-stay { max-width:1240px; margin:0 auto; padding:105px 30px; display:grid; grid-template-columns:.65fr 1.35fr; gap:75px; align-items:center; }
 .padel-stay>div:first-child>p:not(.eyebrow) { color:var(--muted); line-height:1.8; }
 .padel-stay-gallery { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:390px 120px; gap:7px; }
-.padel-stay-gallery div { grid-column:1/-1; background:url("https://goldcoast-accom.com.au/wp-content/uploads/2024/09/48447-294141-0BIcAc3-IFhu0HJ2wRSbJT5ATfOCFxz18Ny-anB8AqU-66a45497c9b4d-1200x800.webp") center/cover; }
+.padel-stay-gallery div { grid-column:1/-1; background:url("/wp-content/uploads/2024/09/48447-294141-0BIcAc3-IFhu0HJ2wRSbJT5ATfOCFxz18Ny-anB8AqU-66a45497c9b4d-1200x800.webp") center/cover; }
 .padel-stay-gallery span:nth-child(2){background:url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80") center/cover}.padel-stay-gallery span:nth-child(3){background:url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80") center/cover}.padel-stay-gallery span:nth-child(4){background:url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80") center/cover}
 .padel-why { background:var(--ice); color:var(--ink); padding:82px 30px 90px; }
 .padel-why .eyebrow { color:var(--teal); }
@@ -544,3 +544,7 @@ footer>div:not(.footer-brand):not(.footer-bottom) a { display:block; font-size:1
   .padel-why>div:last-child,.padel-reviews>div:last-child { grid-template-columns:1fr; }
   .padel-enquire { padding-top:75px; padding-bottom:75px; gap:35px; }
 }
+
+/* Approved brand-board lockup. */
+.brand-logo{width:210px;height:72px;overflow:hidden;filter:brightness(1.025)}
+@media(max-width:620px){.brand-logo{width:180px;height:62px}}
